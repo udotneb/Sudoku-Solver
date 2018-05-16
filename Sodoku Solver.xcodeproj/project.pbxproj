@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5DDF800920ABB0DE009937EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDF800820ABB0DE009937EA /* AppDelegate.swift */; };
+		5DDF800B20ABB0DE009937EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDF800A20ABB0DE009937EA /* ViewController.swift */; };
+		5DDF800E20ABB0DE009937EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DDF800C20ABB0DE009937EA /* Main.storyboard */; };
+		5DDF801020ABB0E1009937EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DDF800F20ABB0E1009937EA /* Assets.xcassets */; };
+		5DDF801320ABB0E1009937EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DDF801120ABB0E1009937EA /* LaunchScreen.storyboard */; };
+		5DDF801E20ABB0E1009937EA /* Sodoku_SolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDF801D20ABB0E1009937EA /* Sodoku_SolverTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5DDF801A20ABB0E1009937EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DDF7FFD20ABB0DE009937EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DDF800420ABB0DE009937EA;
+			remoteInfo = "Sodoku Solver";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5DDF800520ABB0DE009937EA /* Sodoku Solver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sodoku Solver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DDF800820ABB0DE009937EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5DDF800A20ABB0DE009937EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5DDF800D20ABB0DE009937EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5DDF800F20ABB0E1009937EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5DDF801220ABB0E1009937EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5DDF801420ABB0E1009937EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DDF801920ABB0E1009937EA /* Sodoku SolverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sodoku SolverTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DDF801D20ABB0E1009937EA /* Sodoku_SolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sodoku_SolverTests.swift; sourceTree = "<group>"; };
+		5DDF801F20ABB0E1009937EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5DDF800220ABB0DE009937EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DDF801620ABB0E1009937EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5DDF7FFC20ABB0DE009937EA = {
+			isa = PBXGroup;
+			children = (
+				5DDF800720ABB0DE009937EA /* Sodoku Solver */,
+				5DDF801C20ABB0E1009937EA /* Sodoku SolverTests */,
+				5DDF800620ABB0DE009937EA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5DDF800620ABB0DE009937EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5DDF800520ABB0DE009937EA /* Sodoku Solver.app */,
+				5DDF801920ABB0E1009937EA /* Sodoku SolverTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5DDF800720ABB0DE009937EA /* Sodoku Solver */ = {
+			isa = PBXGroup;
+			children = (
+				5DDF800820ABB0DE009937EA /* AppDelegate.swift */,
+				5DDF800A20ABB0DE009937EA /* ViewController.swift */,
+				5DDF800C20ABB0DE009937EA /* Main.storyboard */,
+				5DDF800F20ABB0E1009937EA /* Assets.xcassets */,
+				5DDF801120ABB0E1009937EA /* LaunchScreen.storyboard */,
+				5DDF801420ABB0E1009937EA /* Info.plist */,
+			);
+			path = "Sodoku Solver";
+			sourceTree = "<group>";
+		};
+		5DDF801C20ABB0E1009937EA /* Sodoku SolverTests */ = {
+			isa = PBXGroup;
+			children = (
+				5DDF801D20ABB0E1009937EA /* Sodoku_SolverTests.swift */,
+				5DDF801F20ABB0E1009937EA /* Info.plist */,
+			);
+			path = "Sodoku SolverTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5DDF800420ABB0DE009937EA /* Sodoku Solver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DDF802220ABB0E1009937EA /* Build configuration list for PBXNativeTarget "Sodoku Solver" */;
+			buildPhases = (
+				5DDF800120ABB0DE009937EA /* Sources */,
+				5DDF800220ABB0DE009937EA /* Frameworks */,
+				5DDF800320ABB0DE009937EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sodoku Solver";
+			productName = "Sodoku Solver";
+			productReference = 5DDF800520ABB0DE009937EA /* Sodoku Solver.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5DDF801820ABB0E1009937EA /* Sodoku SolverTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DDF802520ABB0E1009937EA /* Build configuration list for PBXNativeTarget "Sodoku SolverTests" */;
+			buildPhases = (
+				5DDF801520ABB0E1009937EA /* Sources */,
+				5DDF801620ABB0E1009937EA /* Frameworks */,
+				5DDF801720ABB0E1009937EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DDF801B20ABB0E1009937EA /* PBXTargetDependency */,
+			);
+			name = "Sodoku SolverTests";
+			productName = "Sodoku SolverTests";
+			productReference = 5DDF801920ABB0E1009937EA /* Sodoku SolverTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5DDF7FFD20ABB0DE009937EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Benjamin Ulrich";
+				TargetAttributes = {
+					5DDF800420ABB0DE009937EA = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					5DDF801820ABB0E1009937EA = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 5DDF800420ABB0DE009937EA;
+					};
+				};
+			};
+			buildConfigurationList = 5DDF800020ABB0DE009937EA /* Build configuration list for PBXProject "Sodoku Solver" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5DDF7FFC20ABB0DE009937EA;
+			productRefGroup = 5DDF800620ABB0DE009937EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5DDF800420ABB0DE009937EA /* Sodoku Solver */,
+				5DDF801820ABB0E1009937EA /* Sodoku SolverTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5DDF800320ABB0DE009937EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DDF801320ABB0E1009937EA /* LaunchScreen.storyboard in Resources */,
+				5DDF801020ABB0E1009937EA /* Assets.xcassets in Resources */,
+				5DDF800E20ABB0DE009937EA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DDF801720ABB0E1009937EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5DDF800120ABB0DE009937EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DDF800B20ABB0DE009937EA /* ViewController.swift in Sources */,
+				5DDF800920ABB0DE009937EA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DDF801520ABB0E1009937EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DDF801E20ABB0E1009937EA /* Sodoku_SolverTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5DDF801B20ABB0E1009937EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DDF800420ABB0DE009937EA /* Sodoku Solver */;
+			targetProxy = 5DDF801A20ABB0E1009937EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5DDF800C20ABB0DE009937EA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DDF800D20ABB0DE009937EA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5DDF801120ABB0E1009937EA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DDF801220ABB0E1009937EA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5DDF802020ABB0E1009937EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5DDF802120ABB0E1009937EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5DDF802320ABB0E1009937EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FR3Q6K39GS;
+				INFOPLIST_FILE = "Sodoku Solver/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Doe-Developments.Sodoku-Solver";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5DDF802420ABB0E1009937EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FR3Q6K39GS;
+				INFOPLIST_FILE = "Sodoku Solver/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Doe-Developments.Sodoku-Solver";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5DDF802620ABB0E1009937EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FR3Q6K39GS;
+				INFOPLIST_FILE = "Sodoku SolverTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Doe-Developments.Sodoku-SolverTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sodoku Solver.app/Sodoku Solver";
+			};
+			name = Debug;
+		};
+		5DDF802720ABB0E1009937EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FR3Q6K39GS;
+				INFOPLIST_FILE = "Sodoku SolverTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Doe-Developments.Sodoku-SolverTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sodoku Solver.app/Sodoku Solver";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5DDF800020ABB0DE009937EA /* Build configuration list for PBXProject "Sodoku Solver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DDF802020ABB0E1009937EA /* Debug */,
+				5DDF802120ABB0E1009937EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DDF802220ABB0E1009937EA /* Build configuration list for PBXNativeTarget "Sodoku Solver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DDF802320ABB0E1009937EA /* Debug */,
+				5DDF802420ABB0E1009937EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DDF802520ABB0E1009937EA /* Build configuration list for PBXNativeTarget "Sodoku SolverTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DDF802620ABB0E1009937EA /* Debug */,
+				5DDF802720ABB0E1009937EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5DDF7FFD20ABB0DE009937EA /* Project object */;
+}
