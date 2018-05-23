@@ -12,10 +12,12 @@ public class Solver {
     var board: [[Int]]
     var usedStack: Stack<[Int]> //orderd as [x, y]
     var nextStack: Stack<[Int]> //ordered as [x, y, val]
+    var count: Int
     init(x: [[Int]]) {
         self.board = x
         self.usedStack = Stack<[Int]>()
         self.nextStack = Stack<[Int]>()
+        self.count = 0
     }
     
     public func solve() {
@@ -25,6 +27,7 @@ public class Solver {
             let y = currCoor[1]
             
             if (board[y][x] == 0) {
+                count += 1
                 //if not already a set value
                 for i in possibleNumbers(x: x, y: y, board: self.board) {
                     self.nextStack.addTop(x: [x, y, i])
@@ -43,11 +46,11 @@ public class Solver {
                 self.usedStack.addTop(x: [nextCoor[0], nextCoor[1]])
                 currCoor[0] = nextCoor[0]
                 currCoor[1] = nextCoor[1]
-                
-                //if last square
-                if (nextCoor[0] == 8 && nextCoor[1] == 8) {
-                    return;
-                }
+            }
+            //if last square
+            if (currCoor[0] == 8 && currCoor[1] == 8) {
+                print(self.count)
+                return;
             }
             //increment counter
             if (currCoor[0] + 1 == 9) {

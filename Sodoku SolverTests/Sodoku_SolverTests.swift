@@ -25,7 +25,6 @@ class Sodoku_SolverTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let x = Stack<Int>()
-        XCTAssert(x.removeTop() == -1)
         x.addTop(x: 3)
         XCTAssert(x.removeTop() == 3)
         x.addTop(x: 4)
@@ -78,7 +77,7 @@ class Sodoku_SolverTests: XCTestCase {
         XCTAssert(!j.contains(5))
     }
     
-    func test_Solver() {
+    func test_Solver1() {
         var x = [[0, 4, 0, 0, 0, 0, 1, 7, 9]]
         x.append([0, 0, 2, 0, 0, 8, 0, 5, 4])
         x.append([0, 0, 6, 0, 0, 5, 0, 0, 8])
@@ -88,6 +87,34 @@ class Sodoku_SolverTests: XCTestCase {
         x.append([3, 0, 0, 4, 0, 0, 7, 0, 0])
         x.append([5, 7, 0, 1, 0, 0, 2, 0, 0])
         x.append([9, 2, 8, 0, 0, 0, 0, 6, 0])
+        let y = Solver(x: x)
+        y.solve()
+    }
+    
+    func test_Solver2() {
+        var x = [[8, 0, 2, 0, 5, 0, 7, 0, 1]]
+        x.append([0, 0, 7, 0, 8, 2, 4, 6, 0])
+        x.append([0, 1, 0, 9, 0, 0, 0, 0, 0])
+        x.append([6, 0, 0, 0, 0, 1, 8, 3, 2])
+        x.append([5, 0, 0, 0, 0, 0, 0, 0, 9])
+        x.append([1, 8, 4, 3, 0, 0, 0, 0, 6])
+        x.append([0, 0, 0, 0, 0, 4, 0, 2, 0])
+        x.append([0, 9, 5, 6, 1, 0, 3, 0, 0])
+        x.append([3, 0, 8, 0, 9, 0, 6, 0, 7])
+        let y = Solver(x: x)
+        y.solve()
+    }
+    
+    func test_Solver3() {
+        var x = [[0, 0, 0, 7, 0, 0, 8, 0, 0]]
+        x.append([0, 0, 6, 0, 0, 0, 0, 3, 1])
+        x.append([0, 4, 0, 0, 0, 2, 0, 0, 0])
+        x.append([0, 2, 4, 0, 7, 0, 0, 0, 0])
+        x.append([0, 1, 0, 0, 3, 0, 0, 8, 0])
+        x.append([0, 0, 0, 0, 6, 0, 2, 9, 0])
+        x.append([0, 0, 0, 8, 0, 0, 0, 7, 0])
+        x.append([8, 6, 0, 0, 0, 0, 5, 0, 0])
+        x.append([0, 0, 2, 0, 0, 6, 0, 0, 0])
         let y = Solver(x: x)
         y.solve()
     }
