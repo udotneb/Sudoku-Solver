@@ -21,10 +21,77 @@ class Sodoku_SolverTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func test_Stack() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let x = Stack<Int>()
+        XCTAssert(x.removeTop() == -1)
+        x.addTop(x: 3)
+        XCTAssert(x.removeTop() == 3)
+        x.addTop(x: 4)
+        x.addTop(x: 5)
+        XCTAssert(x.removeTop() == 5)
+        XCTAssert(x.removeTop() == 4)
     }
+    
+    func test_possibleNum1() {
+        let x = Solver(x: [[0]])
+        let b = [ [0, 4, 0],[1, 0, 3],[0, 5, 0]]
+        let y = x.possibleNumbers(x: 0, y: 0, board: b)
+        XCTAssert(!y.contains(1))
+        XCTAssert(y.contains(9))
+    }
+    
+    func test_possibleNum2() {
+        let x = Solver(x: [[0]])
+        let b = [ [0, 4, 0],[1, 0, 3],[0, 5, 0]]
+        let yTwo = x.possibleNumbers(x: 1, y: 1, board: b)
+        XCTAssert(!yTwo.contains(4))
+        XCTAssert(!yTwo.contains(5))
+        XCTAssert(!yTwo.contains(1))
+        XCTAssert(!yTwo.contains(3))
+        XCTAssert(yTwo.contains(2))
+        XCTAssert(yTwo.contains(6))
+    }
+    
+    func test_possibleNum3() {
+        let b = [ [9, 4, 0],[1, 0, 3],[0, 5, 0]]
+        let x = Solver(x: [[0]])
+        let y = x.possibleNumbers(x: 1, y: 1, board: b)
+        XCTAssert(!y.contains(9))
+        let p = [0,0,0,0,0,0,0,0,0]
+        var lst = [[0,0,0,0,0,0,0,0,0]]
+        lst.append(p)
+        lst.append(p)
+        lst.append(p)
+        lst.append(p)
+        lst.append(p) //6
+        lst.append([9,7,8,0,0,0,0,0,0])
+        lst.append([6,0,0,0,0,0,0,5,0])
+        lst.append([4,2,3,0,0,0,0,0,0])
+        let j = x.possibleNumbers(x: 1, y: 7, board: lst)
+        XCTAssert(j.contains(1))
+        XCTAssert(!j.contains(9))
+        XCTAssert(!j.contains(4))
+        XCTAssert(!j.contains(3))
+        XCTAssert(!j.contains(8))
+        XCTAssert(!j.contains(5))
+    }
+    
+    func test_Solver() {
+        var x = [[0, 4, 0, 0, 0, 0, 1, 7, 9]]
+        x.append([0, 0, 2, 0, 0, 8, 0, 5, 4])
+        x.append([0, 0, 6, 0, 0, 5, 0, 0, 8])
+        x.append([0, 8, 0, 0, 7, 0, 9, 1, 0])
+        x.append([0, 5, 0, 0, 9, 0, 0, 3, 0])
+        x.append([0, 1, 9, 0, 6, 0, 0, 4, 0])
+        x.append([3, 0, 0, 4, 0, 0, 7, 0, 0])
+        x.append([5, 7, 0, 1, 0, 0, 2, 0, 0])
+        x.append([9, 2, 8, 0, 0, 0, 0, 6, 0])
+        let y = Solver(x: x)
+        y.solve()
+    }
+    
     
     func testPerformanceExample() {
         // This is an example of a performance test case.

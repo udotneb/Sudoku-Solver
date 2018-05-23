@@ -13,6 +13,9 @@
 		5DDF801020ABB0E1009937EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DDF800F20ABB0E1009937EA /* Assets.xcassets */; };
 		5DDF801320ABB0E1009937EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DDF801120ABB0E1009937EA /* LaunchScreen.storyboard */; };
 		5DDF801E20ABB0E1009937EA /* Sodoku_SolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDF801D20ABB0E1009937EA /* Sodoku_SolverTests.swift */; };
+		5DDF802920ABB33B009937EA /* Solver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDF802820ABB33B009937EA /* Solver.swift */; };
+		5DDF802B20ABB5BA009937EA /* SolverTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDF802A20ABB5BA009937EA /* SolverTester.swift */; };
+		5DDF802D20ABB5DC009937EA /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDF802C20ABB5DC009937EA /* Stack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		5DDF801920ABB0E1009937EA /* Sodoku SolverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sodoku SolverTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DDF801D20ABB0E1009937EA /* Sodoku_SolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sodoku_SolverTests.swift; sourceTree = "<group>"; };
 		5DDF801F20ABB0E1009937EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DDF802820ABB33B009937EA /* Solver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solver.swift; sourceTree = "<group>"; };
+		5DDF802A20ABB5BA009937EA /* SolverTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverTester.swift; sourceTree = "<group>"; };
+		5DDF802C20ABB5DC009937EA /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,9 @@
 			children = (
 				5DDF800820ABB0DE009937EA /* AppDelegate.swift */,
 				5DDF800A20ABB0DE009937EA /* ViewController.swift */,
+				5DDF802820ABB33B009937EA /* Solver.swift */,
+				5DDF802C20ABB5DC009937EA /* Stack.swift */,
+				5DDF802A20ABB5BA009937EA /* SolverTester.swift */,
 				5DDF800C20ABB0DE009937EA /* Main.storyboard */,
 				5DDF800F20ABB0E1009937EA /* Assets.xcassets */,
 				5DDF801120ABB0E1009937EA /* LaunchScreen.storyboard */,
@@ -197,8 +206,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DDF802D20ABB5DC009937EA /* Stack.swift in Sources */,
 				5DDF800B20ABB0DE009937EA /* ViewController.swift in Sources */,
 				5DDF800920ABB0DE009937EA /* AppDelegate.swift in Sources */,
+				5DDF802920ABB33B009937EA /* Solver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DDF801E20ABB0E1009937EA /* Sodoku_SolverTests.swift in Sources */,
+				5DDF802B20ABB5BA009937EA /* SolverTester.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
