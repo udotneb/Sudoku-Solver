@@ -20,7 +20,10 @@ public class Solver {
         self.count = 0
     }
     
-    public func solve() {
+    public func solve() -> [[Int]]{
+        if (!initialCheck()) {
+            return [[-1]]
+        }
         var currCoor: [Int] = [0,0]
         while (true) {
             let x = currCoor[0]
@@ -50,7 +53,7 @@ public class Solver {
             //if last square
             if (currCoor[0] == 8 && currCoor[1] == 8) {
                 print(self.count)
-                return;
+                return self.board
             }
             //increment counter
             if (currCoor[0] + 1 == 9) {
@@ -114,6 +117,68 @@ public class Solver {
             }
         }
     }
+    
+    private func initialCheck() -> Bool {
+        for i in 0...8 {
+            for k in 0...8 {
+                let x = i
+                let y = k
+                let horiz = checkHorizontalInit(x: x, y: y, board: board)
+                let vert = checkVerticalInit(x: x, y: y, board: board)
+                let box = checkBoxInit(x: x, y: y, board: board)
+                let flag = horiz && vert && box
+                if (!flag) {
+                    return flag
+                }
+            }
+        }
+        return true
+    }
+    
+    private func checkHorizontalInit(x: Int, y: Int, board: [[Int]]) -> Bool {
+        //mutates list removing all numbers in row
+        var x = Set<Int>()
+        for i in board[y] {
+            if (x.contains(i) && i != 0) {
+                return false
+            }
+            x.insert(i)
+        }
+        return true
+    }
+    
+    private func checkVerticalInit(x: Int, y: Int, board: [[Int]]) -> Bool {
+        //mutates list removing all numbers in column
+        var s = Set<Int>()
+        for i in 0..<board.count {
+            let num = board[i][x]
+            if (num != 0 && s.contains(num)) {
+                return false
+            }
+            s.insert(num)
+        }
+        return true
+    }
+    
+    private func checkBoxInit(x: Int, y: Int, board: [[Int]]) -> Bool {
+        //mutates list removing all numbers in box
+        //BOARD MUST BE MULTIPLE OF 3
+        let xBoard = x / 3
+        let yBoard = y / 3
+        var x = Set<Int>()
+        for i in (yBoard * 3)...(yBoard * 3 + 2) {
+            for k in (xBoard * 3)...(xBoard * 3 + 2) {
+                let num = board[i][k]
+                if (num != 0 && x.contains(num)) {
+                    return false
+                }
+                x.insert(num)
+            }
+        }
+        return true
+    }
+    
+    
     
     
     
