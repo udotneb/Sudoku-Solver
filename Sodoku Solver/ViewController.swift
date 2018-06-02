@@ -14,6 +14,11 @@ class ViewController: UIViewController {
     var boxList: [[UILabel]] = []
     var lastLabel: UILabel?
     var sudokuBoard: UIView?
+    var lstSolved: [[[Int]]] = []
+    var lstSolvedCount: Int = 0
+    var lstSolvedBool: Bool = false
+    var lstOg: [[Int]] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -163,6 +168,7 @@ class ViewController: UIViewController {
         if let z: UILabel = self.lastLabel {
             if let y: UILabel = label as! UILabel? {
                 z.text = y.text
+                z.textColor = .black
                 y.layer.borderColor = UIColor.blue.cgColor
                 y.layer.borderWidth = 8
                 UIView.animate(withDuration: 2, animations: {
@@ -231,33 +237,55 @@ class ViewController: UIViewController {
             for k in i {
                 if let text: String = k.text {
                     k.text = "0"
+                    k.textColor = .black
                 }
             }
         }
     }
     
     @objc func solve(sender: UIButton!) {
-        var lstSolved: [[Int]] = []
+        var mainLst: [[Int]] = []
         for i in boxList {
             var lst: [Int] = []
             for k in i {
                 if let text: String = k.text {
-                    lst.append(Int(k.text!)!)
+                    if let num: Int = Int(text) {
+                        lst.append(num)
+                    }
                 }
             }
-            lstSolved.append(lst)
+            mainLst.append(lst)
         }
-        let y = Solver(x: lstSolved)
-        lstSolved = y.solve()
-        if (lstSolved[0][0] == -1) {
+        self.lstOg = mainLst
+        let y = Solver(x: mainLst)
+        var lstSolved:[[[Int]]] = y.solve()
+        if (lstSolved[0][0][0] < 0) {
             print("y")
         } else {
-            for i in 0...8 {
-                for k in 0...8 {
-                    boxList[i][k].text = String(lstSolved[i][k])
+            self.lstSolvedCount = 0
+            self.lstSolved = lstSolved
+            self.lstSolvedBool = true
+            let timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(nextShow), userInfo: nil, repeats: self.lstSolvedBool)
+        }
+    }
+    
+    @objc func nextShow() {
+        if self.lstSolvedCount >= self.lstSolved.count {
+            self.lstSolvedBool = false
+            return
+        }
+        let q = self.lstSolved[lstSolvedCount]
+        for i in 0...8 {
+            for k in 0...8 {
+                if (self.lstOg[i][k] == 0) {
+                    if (q[i][k] != 0) {
+                        boxList[i][k].text = String(q[i][k])
+                        boxList[i][k].textColor = .orange
+                    }
                 }
             }
         }
+        self.lstSolvedCount += 1
     }
     
     @objc func tappedSudokuBoard(sender: UITapGestureRecognizer) {

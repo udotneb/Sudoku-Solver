@@ -20,9 +20,10 @@ public class Solver {
         self.count = 0
     }
     
-    public func solve() -> [[Int]]{
+    public func solve() -> [[[Int]]]{
+        var returnedLst: [[[Int]]] = []
         if (!initialCheck()) {
-            return [[-1]]
+            return [[[-1]]]
         }
         var currCoor: [Int] = [0,0]
         while (true) {
@@ -49,11 +50,15 @@ public class Solver {
                 self.usedStack.addTop(x: [nextCoor[0], nextCoor[1]])
                 currCoor[0] = nextCoor[0]
                 currCoor[1] = nextCoor[1]
+                returnedLst.append(self.board)
             }
             //if last square
             if (currCoor[0] == 8 && currCoor[1] == 8) {
                 print(self.count)
-                return self.board
+                if returnedLst.count == 0 {
+                    return [[[-2]]]
+                }
+                return returnedLst
             }
             //increment counter
             if (currCoor[0] + 1 == 9) {
