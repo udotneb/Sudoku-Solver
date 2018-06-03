@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -29,11 +30,22 @@ class ViewController: UIViewController {
         self.boxList = []
         self.lastLabel = nil
         initializeLabels()
+        intializeLastBoard()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func intializeLastBoard() {
+        if let b: [[Int]] = BoardModel.board {
+            for i in 0...8 {
+                for k in 0...8 {
+                    boxList[i][k].text = String(b[i][k])
+                }
+            }
+        }
     }
     
     private func initializeLabels() {
@@ -178,8 +190,6 @@ class ViewController: UIViewController {
                                completion: nil)
             }
         }
-        print("tap")
-        
     }
     
     //MARK: METHODS
@@ -228,14 +238,13 @@ class ViewController: UIViewController {
         if let x: UIView = self.sudokuBoard {
             x.layer.addSublayer(line)
         }
-        //self.view.layer.addSublayer(line)
     }
     
     
     @objc func reset(func: UIButton!) {
         for i in boxList {
             for k in i {
-                if let text: String = k.text {
+                if let _: String = k.text {
                     k.text = "0"
                     k.textColor = .black
                 }
@@ -266,6 +275,7 @@ class ViewController: UIViewController {
             self.lstSolved = lstSolved
             self.lstSolvedBool = true
             let timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(nextShow), userInfo: nil, repeats: self.lstSolvedBool)
+            BoardModel.board = lstSolved[lstSolved.count - 1]
         }
     }
     

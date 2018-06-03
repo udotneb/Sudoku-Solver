@@ -16,6 +16,9 @@
 		5DDF802920ABB33B009937EA /* Solver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDF802820ABB33B009937EA /* Solver.swift */; };
 		5DDF802B20ABB5BA009937EA /* SolverTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDF802A20ABB5BA009937EA /* SolverTester.swift */; };
 		5DDF802D20ABB5DC009937EA /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDF802C20ABB5DC009937EA /* Stack.swift */; };
+		5DF9409F20C32ACB00D9266F /* BoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF9409E20C32ACB00D9266F /* BoardModel.swift */; };
+		5DF940A220C465F400D9266F /* CoreModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5DF940A020C465F400D9266F /* CoreModel.xcdatamodeld */; };
+		5DF940D320C46BF100D9266F /* Save.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF940D220C46BF000D9266F /* Save.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,9 @@
 		5DDF802820ABB33B009937EA /* Solver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solver.swift; sourceTree = "<group>"; };
 		5DDF802A20ABB5BA009937EA /* SolverTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverTester.swift; sourceTree = "<group>"; };
 		5DDF802C20ABB5DC009937EA /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		5DF9409E20C32ACB00D9266F /* BoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BoardModel.swift; path = "Sodoku Solver/BoardModel.swift"; sourceTree = "<group>"; };
+		5DF940A120C465F400D9266F /* CoreModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreModel.xcdatamodel; sourceTree = "<group>"; };
+		5DF940D220C46BF000D9266F /* Save.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Save.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 		5DDF7FFC20ABB0DE009937EA = {
 			isa = PBXGroup;
 			children = (
+				5DF9409E20C32ACB00D9266F /* BoardModel.swift */,
 				5DDF800720ABB0DE009937EA /* Sodoku Solver */,
 				5DDF801C20ABB0E1009937EA /* Sodoku SolverTests */,
 				5DDF800620ABB0DE009937EA /* Products */,
@@ -85,6 +92,8 @@
 			children = (
 				5DDF800820ABB0DE009937EA /* AppDelegate.swift */,
 				5DDF800A20ABB0DE009937EA /* ViewController.swift */,
+				5DF940A020C465F400D9266F /* CoreModel.xcdatamodeld */,
+				5DF940D220C46BF000D9266F /* Save.swift */,
 				5DDF802820ABB33B009937EA /* Solver.swift */,
 				5DDF802C20ABB5DC009937EA /* Stack.swift */,
 				5DDF802A20ABB5BA009937EA /* SolverTester.swift */,
@@ -209,7 +218,10 @@
 				5DDF802D20ABB5DC009937EA /* Stack.swift in Sources */,
 				5DDF800B20ABB0DE009937EA /* ViewController.swift in Sources */,
 				5DDF800920ABB0DE009937EA /* AppDelegate.swift in Sources */,
+				5DF9409F20C32ACB00D9266F /* BoardModel.swift in Sources */,
+				5DF940A220C465F400D9266F /* CoreModel.xcdatamodeld in Sources */,
 				5DDF802920ABB33B009937EA /* Solver.swift in Sources */,
+				5DF940D320C46BF100D9266F /* Save.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +487,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5DF940A020C465F400D9266F /* CoreModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5DF940A120C465F400D9266F /* CoreModel.xcdatamodel */,
+			);
+			currentVersion = 5DF940A120C465F400D9266F /* CoreModel.xcdatamodel */;
+			path = CoreModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5DDF7FFD20ABB0DE009937EA /* Project object */;
 }
