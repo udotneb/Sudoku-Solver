@@ -19,6 +19,10 @@ class ViewController: UIViewController {
     var lstSolvedCount: Int = 0
     var lstSolvedBool: Bool = false
     var lstOg: [[Int]] = []
+    var solveTimer: Timer?
+    static var lastBoardStr: String? = nil
+    static var lastBoard: [[Int]]? = nil
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +34,7 @@ class ViewController: UIViewController {
         self.boxList = []
         self.lastLabel = nil
         initializeLabels()
+        Saver.fetch()
         intializeLastBoard()
     }
 
@@ -39,7 +44,7 @@ class ViewController: UIViewController {
     }
     
     private func intializeLastBoard() {
-        if let b: [[Int]] = BoardModel.board {
+        if let b: [[Int]] = ViewController.lastBoard {
             for i in 0...8 {
                 for k in 0...8 {
                     boxList[i][k].text = String(b[i][k])
@@ -174,36 +179,6 @@ class ViewController: UIViewController {
         return returned
     }
     
-    @objc func tappedNumber(sender: UITapGestureRecognizer) {
-        let spot = sender.location(in: self.view)
-        let label = self.view.hitTest(spot, with: nil)
-        if let z: UILabel = self.lastLabel {
-            if let y: UILabel = label as! UILabel? {
-                z.text = y.text
-                z.textColor = .black
-                y.layer.borderColor = UIColor.blue.cgColor
-                y.layer.borderWidth = 8
-                UIView.animate(withDuration: 2, animations: {
-                    y.layer.borderColor = UIColor.orange.cgColor
-                    y.layer.borderWidth = 0.5
-                },
-                               completion: nil)
-            }
-        }
-    }
-    
-    //MARK: METHODS
-    private func printer() {
-        for i in boxList {
-            for k in i {
-                if let text: String = k.text {
-                    print(text, terminator: " ")
-                }
-            }
-            print("")
-        }
-    }
-    
     private func drawLatice() {
         let leftVert: UILabel = self.boxList[0][2]
         var x1 = leftVert.frame.origin.x + 3 * leftVert.frame.width - 4
@@ -240,6 +215,18 @@ class ViewController: UIViewController {
         }
     }
     
+    //MARK: METHODS
+    private func printer() {
+        for i in boxList {
+            for k in i {
+                if let text: String = k.text {
+                    print(text, terminator: " ")
+                }
+            }
+            print("")
+        }
+    }
+    
     
     @objc func reset(func: UIButton!) {
         for i in boxList {
@@ -250,38 +237,53 @@ class ViewController: UIViewController {
                 }
             }
         }
+        save()
+    }
+    
+    @objc func tappedNumber(sender: UITapGestureRecognizer) {
+        let spot = sender.location(in: self.view)
+        let label = self.view.hitTest(spot, with: nil)
+        if let z: UILabel = self.lastLabel {
+            if let y: UILabel = label as! UILabel? {
+                z.text = y.text
+                z.textColor = .black
+                y.layer.borderColor = UIColor.blue.cgColor
+                y.layer.borderWidth = 8
+                UIView.animate(withDuration: 2, animations: {
+                    y.layer.borderColor = UIColor.orange.cgColor
+                    y.layer.borderWidth = 0.5
+                },
+                               completion: nil)
+                save()
+            }
+        }
     }
     
     @objc func solve(sender: UIButton!) {
-        var mainLst: [[Int]] = []
-        for i in boxList {
-            var lst: [Int] = []
-            for k in i {
-                if let text: String = k.text {
-                    if let num: Int = Int(text) {
-                        lst.append(num)
-                    }
-                }
-            }
-            mainLst.append(lst)
-        }
+        var mainLst: [[Int]] = getList()
         self.lstOg = mainLst
         let y = Solver(x: mainLst)
         var lstSolved:[[[Int]]] = y.solve()
         if (lstSolved[0][0][0] < 0) {
-            print("y")
+            let alert = UIAlertView()
+            alert.title = "Error"
+            alert.message = "Ya done goofed"
+            alert.addButton(withTitle: "resolve")
+            alert.show()
+            return
         } else {
             self.lstSolvedCount = 0
             self.lstSolved = lstSolved
             self.lstSolvedBool = true
-            let timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(nextShow), userInfo: nil, repeats: self.lstSolvedBool)
+            self.solveTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(nextShow), userInfo: nil, repeats: self.lstSolvedBool)
             BoardModel.board = lstSolved[lstSolved.count - 1]
         }
     }
     
     @objc func nextShow() {
         if self.lstSolvedCount >= self.lstSolved.count {
-            self.lstSolvedBool = false
+            self.solveTimer!.invalidate()
+            save()
             return
         }
         let q = self.lstSolved[lstSolvedCount]
@@ -316,9 +318,32 @@ class ViewController: UIViewController {
         if self.lastLabel != nil {
             self.lastLabel?.text = "0"
         }
+        save()
     }
-
     
+    private func save() {
+        Saver.save(x: getList())
+        if let fetched: [LastBoard] = Saver.fetch() {
+            for i in fetched {
+                print(i.b)
+            }
+        }
+    }
     
+    private func getList() -> [[Int]] {
+        var mainLst: [[Int]] = []
+        for i in boxList {
+            var lst: [Int] = []
+            for k in i {
+                if let text: String = k.text {
+                    if let num: Int = Int(text) {
+                        lst.append(num)
+                    }
+                }
+            }
+            mainLst.append(lst)
+        }
+        return mainLst
+    }
 }
 
