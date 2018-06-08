@@ -1,4 +1,5 @@
 # Sudoku-Solver
-Swift app that solves inputted sudoku puzzles using backtracking. 
+Swift app that solves inputted sudoku puzzles using backtracking. Animates the backtracking process. Created programmatically using only swift code.
 
-Created using only the swift language, without the use of the XCode storyboard.
+Utilizes core data to save sudoku board before app closure. Cleans core data with each use, keeping only one board in memory at a time.
+
