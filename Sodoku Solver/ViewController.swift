@@ -20,9 +20,10 @@ class ViewController: UIViewController {
     var lstSolvedBool: Bool = false
     var lstOg: [[Int]] = []
     var solveTimer: Timer?
+    var fastSolve: Bool = true
     static var lastBoardStr: String? = nil
     static var lastBoard: [[Int]]? = nil
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,8 +90,18 @@ class ViewController: UIViewController {
         resetButton.setTitle("reset", for: .normal)
         resetButton.addTarget(self, action: #selector(reset), for: .touchUpInside)
         
+        //which button
+        let whichSolve = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+        whichSolve.backgroundColor = .gray
+        if fastSolve {
+            whichSolve.setTitle("Fast", for: .normal)
+        } else {
+            whichSolve.setTitle("Normal", for: .normal)
+        }
+        whichSolve.addTarget(self, action: #selector(switchSolver), for: .touchUpInside)
+        
         //left vertical stack
-        let verticalStackLeft = UIStackView(arrangedSubviews: [solveButton, resetButton])
+        let verticalStackLeft = UIStackView(arrangedSubviews: [solveButton, resetButton, whichSolve])
         verticalStackLeft.frame = lowerHalf.frame
         verticalStackLeft.axis = .vertical
         verticalStackLeft.distribution = .fillEqually
@@ -229,11 +240,28 @@ class ViewController: UIViewController {
     
     
     @objc func reset(func: UIButton!) {
+        if let p: Timer = self.solveTimer {
+            self.solveTimer?.invalidate()
+        }
+        var orangeFlag: Bool = false //if any oranges were deleted
         for i in boxList {
             for k in i {
                 if let _: String = k.text {
-                    k.text = "0"
-                    k.textColor = .black
+                    if k.textColor == .orange {
+                        orangeFlag = true
+                        k.text = "0"
+                        k.textColor = .black
+                    }
+                }
+            }
+        }
+        if !orangeFlag {
+            for i in boxList {
+                for k in i {
+                    if let _: String = k.text {
+                        k.text = "0"
+                        k.textColor = .black
+                    }
                 }
             }
         }
@@ -260,9 +288,12 @@ class ViewController: UIViewController {
     }
     
     @objc func solve(sender: UIButton!) {
-        var mainLst: [[Int]] = getList()
+        let mainLst: [[Int]] = getList()
         self.lstOg = mainLst
-        let y = Solver(x: mainLst)
+        var y: SolverParent = Solver(x: mainLst)
+        if fastSolve {
+            y = FastSolver(x: mainLst)
+        }
         var lstSolved:[[[Int]]] = y.solve()
         if (lstSolved[0][0][0] < 0) {
             let alert = UIAlertView()
@@ -319,6 +350,16 @@ class ViewController: UIViewController {
             self.lastLabel?.text = "0"
         }
         save()
+    }
+    
+    @objc func switchSolver(sender: UIButton) {
+        if fastSolve {
+            sender.setTitle("Normal", for: .normal)
+            fastSolve = false
+        } else {
+            sender.setTitle("Fast", for: .normal)
+            fastSolve = true
+        }
     }
     
     private func save() {

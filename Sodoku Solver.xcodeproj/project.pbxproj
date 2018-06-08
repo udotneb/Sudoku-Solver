@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DC6FC3D20C99B60003045BE /* MinHeap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6FC3C20C99B60003045BE /* MinHeap.swift */; };
+		5DC6FC3F20C99CDF003045BE /* FastSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6FC3E20C99CDF003045BE /* FastSolver.swift */; };
+		5DC6FC4120CA44C0003045BE /* SolverParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6FC4020CA44C0003045BE /* SolverParent.swift */; };
 		5DDF800920ABB0DE009937EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDF800820ABB0DE009937EA /* AppDelegate.swift */; };
 		5DDF800B20ABB0DE009937EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDF800A20ABB0DE009937EA /* ViewController.swift */; };
 		5DDF800E20ABB0DE009937EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DDF800C20ABB0DE009937EA /* Main.storyboard */; };
@@ -32,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5DC6FC3C20C99B60003045BE /* MinHeap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinHeap.swift; sourceTree = "<group>"; };
+		5DC6FC3E20C99CDF003045BE /* FastSolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastSolver.swift; sourceTree = "<group>"; };
+		5DC6FC4020CA44C0003045BE /* SolverParent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverParent.swift; sourceTree = "<group>"; };
 		5DDF800520ABB0DE009937EA /* Sodoku Solver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sodoku Solver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DDF800820ABB0DE009937EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DDF800A20ABB0DE009937EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,12 +95,15 @@
 		5DDF800720ABB0DE009937EA /* Sodoku Solver */ = {
 			isa = PBXGroup;
 			children = (
+				5DC6FC4020CA44C0003045BE /* SolverParent.swift */,
 				5DF940D620C479D000D9266F /* Saver.swift */,
 				5DF9409E20C32ACB00D9266F /* BoardModel.swift */,
 				5DDF800820ABB0DE009937EA /* AppDelegate.swift */,
 				5DDF800A20ABB0DE009937EA /* ViewController.swift */,
+				5DC6FC3C20C99B60003045BE /* MinHeap.swift */,
 				5DF940A020C465F400D9266F /* CoreModel.xcdatamodeld */,
 				5DDF802820ABB33B009937EA /* Solver.swift */,
+				5DC6FC3E20C99CDF003045BE /* FastSolver.swift */,
 				5DDF802C20ABB5DC009937EA /* Stack.swift */,
 				5DDF802A20ABB5BA009937EA /* SolverTester.swift */,
 				5DDF800C20ABB0DE009937EA /* Main.storyboard */,
@@ -215,10 +224,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DC6FC3F20C99CDF003045BE /* FastSolver.swift in Sources */,
 				5DDF802D20ABB5DC009937EA /* Stack.swift in Sources */,
 				5DDF800B20ABB0DE009937EA /* ViewController.swift in Sources */,
 				5DDF800920ABB0DE009937EA /* AppDelegate.swift in Sources */,
 				5DF9409F20C32ACB00D9266F /* BoardModel.swift in Sources */,
+				5DC6FC3D20C99B60003045BE /* MinHeap.swift in Sources */,
+				5DC6FC4120CA44C0003045BE /* SolverParent.swift in Sources */,
 				5DF940A220C465F400D9266F /* CoreModel.xcdatamodeld in Sources */,
 				5DDF802920ABB33B009937EA /* Solver.swift in Sources */,
 				5DF940D720C479D000D9266F /* Saver.swift in Sources */,

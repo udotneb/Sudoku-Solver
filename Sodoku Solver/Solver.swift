@@ -5,10 +5,13 @@
 //  Created by Benjamin Ulrich on 5/15/18.
 //  Copyright © 2018 Benjamin Ulrich. All rights reserved.
 //
+//  Brute force backtracking algorithm for 9 x 9 sudokus
+//
+
 
 import Foundation
 
-public class Solver {
+public class Solver: SolverParent {
     var board: [[Int]]
     var usedStack: Stack<[Int]> //orderd as [x, y]
     var nextStack: Stack<[Int]> //ordered as [x, y, val]
@@ -20,7 +23,7 @@ public class Solver {
         self.count = 0
     }
     
-    public func solve() -> [[[Int]]]{
+    public override func solve() -> [[[Int]]]{
         var returnedLst: [[[Int]]] = []
         if (!initialCheck()) {
             return [[[-1]]]
@@ -33,7 +36,7 @@ public class Solver {
             if (board[y][x] == 0) {
                 count += 1
                 //if not already a set value
-                for i in possibleNumbers(x: x, y: y, board: self.board) {
+                for i in Solver.possibleNumbers(x: x, y: y, board: self.board) {
                     self.nextStack.addTop(x: [x, y, i])
                 }
                 
@@ -84,7 +87,7 @@ public class Solver {
         return 0
     }
     
-    public func possibleNumbers(x: Int, y: Int, board: [[Int]]) -> Set<Int> {
+    public static func possibleNumbers(x: Int, y: Int, board: [[Int]]) -> Set<Int> {
         //returns a list with all missing words in box, horiz, vertical
         var lst = Set<Int>()
         for i in 1...9 {
@@ -96,14 +99,14 @@ public class Solver {
         return lst
     }
     
-    private func checkHorizontal(x: Int, y: Int, lst: inout Set<Int>, board: [[Int]]) {
+    private static func checkHorizontal(x: Int, y: Int, lst: inout Set<Int>, board: [[Int]]) {
         //mutates list removing all numbers in row
         for i in board[y] {
             lst.remove(i)
         }
     }
     
-    private func checkVertical(x: Int, y: Int, lst: inout Set<Int>, board: [[Int]]) {
+    private static func checkVertical(x: Int, y: Int, lst: inout Set<Int>, board: [[Int]]) {
         //mutates list removing all numbers in column
         for i in 0..<board.count {
             let num = board[i][x]
@@ -111,7 +114,7 @@ public class Solver {
         }
     }
     
-    private func checkBox(x: Int, y: Int, lst: inout Set<Int>, board: [[Int]]) {
+    private static func checkBox(x: Int, y: Int, lst: inout Set<Int>, board: [[Int]]) {
         //mutates list removing all numbers in box
         //BOARD MUST BE MULTIPLE OF 3
         let xBoard = x / 3
