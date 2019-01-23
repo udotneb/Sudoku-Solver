@@ -21,6 +21,7 @@ public class Saver {
     
     public static func fetch() -> [LastBoard]? {
         var returned: [LastBoard]? = nil
+        return nil
         do {
             returned = try context.fetch(LastBoard.fetchRequest())
             ViewController.lastBoardStr = returned![returned!.count - 1].b

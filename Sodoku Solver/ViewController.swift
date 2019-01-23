@@ -295,18 +295,27 @@ class ViewController: UIViewController {
             y = FastSolver(x: mainLst)
         }
         var lstSolved:[[[Int]]] = y.solve()
-        if (lstSolved[0][0][0] < 0) {
+        if (lstSolved[0][0][0] == -1) {
             let alert = UIAlertView()
             alert.title = "Error"
             alert.message = "Ya done goofed"
             alert.addButton(withTitle: "resolve")
             alert.show()
             return
-        } else {
+        } else if lstSolved[0][0][0] == -2 {
+            let alert = UIAlertView()
+            alert.title = "Error"
+            alert.message = "Over 1 million attempts ran, try switching solver"
+            alert.addButton(withTitle: "resolve")
+            alert.show()
+            return
+        }
+        else {
             self.lstSolvedCount = 0
             self.lstSolved = lstSolved
             self.lstSolvedBool = true
-            self.solveTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(nextShow), userInfo: nil, repeats: self.lstSolvedBool)
+            let time = 10.0 / Double(lstSolved.count)
+            self.solveTimer = Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(nextShow), userInfo: nil, repeats: self.lstSolvedBool)
             BoardModel.board = lstSolved[lstSolved.count - 1]
         }
     }
@@ -363,12 +372,9 @@ class ViewController: UIViewController {
     }
     
     private func save() {
-        Saver.save(x: getList())
-        if let fetched: [LastBoard] = Saver.fetch() {
-            for i in fetched {
-                print(i.b)
-            }
-        }
+        let x = getList()
+        Saver.save(x: x)
+        print(Saver.listToString(x: x))
     }
     
     private func getList() -> [[Int]] {

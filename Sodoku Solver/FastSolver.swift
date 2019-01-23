@@ -39,6 +39,9 @@ public class FastSolver: SolverParent {
         }
         while true {
             count += 1
+            if count > 1000000 {
+                return [[[-2]]]
+            }
             self.mainBoard = lastBoard.removeTop()
             returnedList.append(mainBoard)
             self.boardCounts = lastCount.removeTop()

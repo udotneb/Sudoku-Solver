@@ -35,6 +35,9 @@ public class Solver: SolverParent {
             
             if (board[y][x] == 0) {
                 count += 1
+                if count > 1000000 {
+                    return [[[-2]]]
+                }
                 //if not already a set value
                 for i in Solver.possibleNumbers(x: x, y: y, board: self.board) {
                     self.nextStack.addTop(x: [x, y, i])
