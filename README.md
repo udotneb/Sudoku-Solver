@@ -5,3 +5,5 @@ Contains two backtracking algorithms. One is the generic brute force one. The ot
 
 Utilizes core data to save sudoku board before app closure. Cleans core data with each use, keeping only one board in memory at a time.
 
+## Example
+![Alt Text](https://github.com/udotneb/Sudoku-Solver/blob/master/example.gif)
